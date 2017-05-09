@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ifocus.IQM_tool.core.Questionnaire.QuesCreateReqObject;
+import com.ifocus.IQM_tool.core.Questionnaire.AdminQuesCreateObject;
 
 
 
@@ -37,7 +37,7 @@ public class AdminQuestionnaireController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "businessprocess/{processid}/admin_ques")
-	public AdminQuestionnaire createAdminQues(@RequestBody QuesCreateReqObject quesCreateReqObject,
+	public AdminQuestionnaire createAdminQues(@RequestBody AdminQuesCreateObject quesCreateReqObject,
 			@PathVariable String processid) {
 
 		AdminQuestionnaire adminQuestionnaire = adminQuestionnaireService.addAdminQues(processid, quesCreateReqObject);

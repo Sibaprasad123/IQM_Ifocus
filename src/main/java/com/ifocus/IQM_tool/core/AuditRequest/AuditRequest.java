@@ -10,12 +10,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.ifocus.IQM_tool.CommonUtils.AbstractDocument;
-import com.ifocus.IQM_tool.core.Admin.AdminQuestionnaire;
-import com.ifocus.IQM_tool.core.BusinessArea.BusinessArea;
-import com.ifocus.IQM_tool.core.User.ApplicationStatus;
+import com.ifocus.IQM_tool.core.Questionnaire.RequesterQuestionnaire;
 import com.ifocus.IQM_tool.core.User.User;
-
-
 
 /**
  * @author IGS-Admin
@@ -31,18 +27,15 @@ public class AuditRequest extends AbstractDocument {
 	private User auditor;
 
 	@DBRef
-	private BusinessArea businessArea;
-
-	@DBRef
-	private List<AdminQuestionnaire> questionnaires;
-
-	private ApplicationStatus applicationStatus;
+	private List<RequesterQuestionnaire> questionnaires;
 
 	private AuditStatus auditStatus;
 
 	private Date expiryDate;
 
 	private String remarks;
+
+	private double auditScore;
 
 	/**
 	 * @return the requester
@@ -75,24 +68,9 @@ public class AuditRequest extends AbstractDocument {
 	}
 
 	/**
-	 * @return the businessArea
-	 */
-	public BusinessArea getBusinessArea() {
-		return businessArea;
-	}
-
-	/**
-	 * @param businessArea
-	 *            the businessArea to set
-	 */
-	public void setBusinessArea(BusinessArea businessArea) {
-		this.businessArea = businessArea;
-	}
-
-	/**
 	 * @return the questionnaires
 	 */
-	public List<AdminQuestionnaire> getQuestionnaires() {
+	public List<RequesterQuestionnaire> getQuestionnaires() {
 		return questionnaires;
 	}
 
@@ -100,23 +78,8 @@ public class AuditRequest extends AbstractDocument {
 	 * @param questionnaires
 	 *            the questionnaires to set
 	 */
-	public void setQuestionnaires(List<AdminQuestionnaire> questionnaires) {
+	public void setQuestionnaires(List<RequesterQuestionnaire> questionnaires) {
 		this.questionnaires = questionnaires;
-	}
-
-	/**
-	 * @return the applicationStatus
-	 */
-	public ApplicationStatus getApplicationStatus() {
-		return applicationStatus;
-	}
-
-	/**
-	 * @param applicationStatus
-	 *            the applicationStatus to set
-	 */
-	public void setApplicationStatus(ApplicationStatus applicationStatus) {
-		this.applicationStatus = applicationStatus;
 	}
 
 	/**
@@ -162,6 +125,21 @@ public class AuditRequest extends AbstractDocument {
 	 */
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
+	}
+
+	/**
+	 * @return the auditScore
+	 */
+	public double getAuditScore() {
+		return auditScore;
+	}
+
+	/**
+	 * @param auditScore
+	 *            the auditScore to set
+	 */
+	public void setAuditScore(double auditScore) {
+		this.auditScore = auditScore;
 	}
 
 }

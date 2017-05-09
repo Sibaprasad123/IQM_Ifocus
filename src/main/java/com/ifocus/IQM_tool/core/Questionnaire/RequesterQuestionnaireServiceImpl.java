@@ -43,7 +43,7 @@ public class RequesterQuestionnaireServiceImpl implements RequesterQuestionnaire
 	}
 
 	@Override
-	public RequesterQuestionnaire reqAssesment(String processid, ReqQuesObject reqQuesObject) {
+	public RequesterQuestionnaire reqAssesment(String processid, ReqQuesCreateObject reqQuesObject) {
 
 		RequesterQuestionnaire requesterQuestionnaire = new RequesterQuestionnaire();
 

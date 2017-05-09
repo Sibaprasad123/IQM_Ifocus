@@ -9,17 +9,15 @@ import java.util.Set;
  * @author IGS-Admin
  *
  */
-public class ReqQuesObject {
+public class AdminQuesCreateObject {
 
 	private String questionId;
 
 	private String question;
 
-	private String choice;
+	private Set<String> choices;
 
 	private Set<String> weightage;
-
-	private String remarks;
 
 	/**
 	 * @return the questionId
@@ -52,18 +50,18 @@ public class ReqQuesObject {
 	}
 
 	/**
-	 * @return the choice
+	 * @return the choices
 	 */
-	public String getChoice() {
-		return choice;
+	public Set<String> getChoices() {
+		return choices;
 	}
 
 	/**
-	 * @param choice
-	 *            the choice to set
+	 * @param choices
+	 *            the choices to set
 	 */
-	public void setChoice(String choice) {
-		this.choice = choice;
+	public void setChoices(Set<String> choices) {
+		this.choices = choices;
 	}
 
 	/**
@@ -79,21 +77,6 @@ public class ReqQuesObject {
 	 */
 	public void setWeightage(Set<String> weightage) {
 		this.weightage = weightage;
-	}
-
-	/**
-	 * @return the remarks
-	 */
-	public String getRemarks() {
-		return remarks;
-	}
-
-	/**
-	 * @param remarks
-	 *            the remarks to set
-	 */
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
 	}
 
 }

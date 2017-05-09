@@ -13,6 +13,6 @@ public interface RequesterQuestionnaireService {
 
 	List<RequesterQuestionnaire> getAllQuestionnaires(String processId);
 
-	RequesterQuestionnaire reqAssesment(String processid, ReqQuesObject reqQuesObject);
+	RequesterQuestionnaire reqAssesment(String processid, ReqQuesCreateObject reqQuesObject);
 
 }

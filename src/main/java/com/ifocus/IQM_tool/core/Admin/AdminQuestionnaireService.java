@@ -5,7 +5,7 @@ package com.ifocus.IQM_tool.core.Admin;
 
 import java.util.List;
 
-import com.ifocus.IQM_tool.core.Questionnaire.QuesCreateReqObject;
+import com.ifocus.IQM_tool.core.Questionnaire.AdminQuesCreateObject;
 
 
 /**
@@ -16,6 +16,6 @@ public interface AdminQuestionnaireService {
 
 	List<AdminQuestionnaire> getAllQuestionnaires();
 
-	AdminQuestionnaire addAdminQues(String processid, QuesCreateReqObject quesCreateReqObject);
+	AdminQuestionnaire addAdminQues(String processid, AdminQuesCreateObject quesCreateReqObject);
 
 }

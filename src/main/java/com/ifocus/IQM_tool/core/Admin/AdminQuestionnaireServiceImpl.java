@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.ifocus.IQM_tool.core.BusinessProcess.BusinessProcess;
 import com.ifocus.IQM_tool.core.BusinessProcess.BusinessProcessDAO;
-import com.ifocus.IQM_tool.core.Questionnaire.QuesCreateReqObject;
+import com.ifocus.IQM_tool.core.Questionnaire.AdminQuesCreateObject;
 import com.ifocus.IQM_tool.core.User.Choices;
 import com.ifocus.IQM_tool.core.Weightage.Weightage;
 import com.ifocus.IQM_tool.core.Weightage.WeightageDAO;
@@ -45,7 +45,7 @@ public class AdminQuestionnaireServiceImpl implements AdminQuestionnaireService 
 	}
 
 	@Override
-	public AdminQuestionnaire addAdminQues(String processId, QuesCreateReqObject quesCreateReqObject) {
+	public AdminQuestionnaire addAdminQues(String processId, AdminQuesCreateObject quesCreateReqObject) {
 
 		AdminQuestionnaire adminQuestionnaire = new AdminQuestionnaire();
 
