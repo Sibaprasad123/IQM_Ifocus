@@ -6,7 +6,7 @@
 	<groupId>com.ifocus</groupId>
 	<artifactId>IQM_IfOCUS_Backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>IQM_IfOCUS_Backend</name>
 	<description>Demo project for Spring Boot</description>
