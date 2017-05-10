@@ -45,11 +45,48 @@ public class BusinessProcessServiceImpl implements BusinessProcessService {
 		BusinessArea businessArea = businessAreaDAO.findOne(businessAreaId);
 
 		businessProcess.setBusinessArea(businessArea);
-		businessProcess.setBusinessProcessStatus(businessProcess.getBusinessProcessStatus());
+
+		businessProcess.setBusinessProcessStatus(BusinessProcessStatus.ACTIVE);
 
 		businessProcess = businessProcessDAO.save(businessProcess);
 
 		return businessProcess;
+	}
+
+	@Override
+	public BusinessProcess updateProcessStatus(String processid, String status) throws Exception {
+
+		BusinessProcess businessProcess = null;
+
+		businessProcess = businessProcessDAO.findOne(processid);
+
+		if (businessProcess != null) {
+
+			businessProcess.setBusinessProcessStatus(BusinessProcessStatus.valueOf(status));
+
+			businessProcessDAO.save(businessProcess);
+		} else {
+			throw new Exception("Business process doesn't exist");
+		}
+
+		return businessProcess;
+	}
+
+	@Override
+	public String deleteProcessStatus(String processid) throws Exception {
+
+		BusinessProcess businessProcess = null;
+
+		businessProcess = businessProcessDAO.findOne(processid);
+
+		if (businessProcess != null) {
+			businessProcessDAO.delete(businessProcess);
+
+		} else {
+			throw new Exception("Business process doesn't exist");
+		}
+
+		return "Deleted successfully!";
 	}
 
 }

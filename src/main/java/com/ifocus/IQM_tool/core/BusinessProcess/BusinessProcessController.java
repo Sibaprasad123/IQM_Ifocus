@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
 /**
  * @author IGS-Admin
  *
@@ -38,10 +36,28 @@ public class BusinessProcessController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/businessareas/{areaid}/businessprocess")
-	public BusinessProcess addCourse(@RequestBody BusinessProcess businessProcess, @PathVariable String areaid) {
+	public BusinessProcess addBusinessProcess(@RequestBody BusinessProcess businessProcess,
+			@PathVariable String areaid) {
 		businessProcessService.addBusinessProcess(areaid, businessProcess);
 
 		return businessProcess;
+	}
+
+	@RequestMapping(method = RequestMethod.PUT, value = "/businessprocess/{processid}/status")
+	public BusinessProcess updateProcessStatus(@RequestBody String status, @PathVariable String processid)
+			throws Exception {
+		BusinessProcess businessProcess = null;
+		businessProcess = businessProcessService.updateProcessStatus(processid, status);
+		return businessProcess;
+	}
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "/businessprocess/{processid}")
+	public String deleteProcessStatus(@PathVariable String processid) throws Exception {
+
+		String message = null;
+
+		message = businessProcessService.deleteProcessStatus(processid);
+		return message;
 	}
 
 }

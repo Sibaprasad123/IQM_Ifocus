@@ -34,4 +34,27 @@ public class BusinessAreaServieImpl implements BusinessAreaService {
 		return businessArea;
 	}
 
+	@Override
+	public BusinessArea updateBusinessArea(String areaid, BusinessArea businessArea) {
+
+		businessArea = businessAreaDAO.findOne(areaid);
+		if (businessArea != null) {
+			businessArea = businessAreaDAO.save(businessArea);
+		}
+
+		return businessArea;
+	}
+
+	@Override
+	public String deleteBusinessArea(String areaid) {
+		// TODO Auto-generated method stub
+		BusinessArea businessArea = businessAreaDAO.findOne(areaid);
+		if (businessArea != null) {
+			businessAreaDAO.delete(businessArea);
+		}
+
+		return "Deleted succesfully!!";
+
+	}
+
 }
