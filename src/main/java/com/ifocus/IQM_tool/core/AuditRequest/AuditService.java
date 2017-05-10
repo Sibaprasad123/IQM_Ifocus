@@ -13,7 +13,7 @@ public interface AuditService {
 
 	List<AuditRequest> getAllAudits();
 
-	double calculateAuditScore(String auditid, WeightageCalculation weightageCalculation);
+	double calculateAuditScore(String auditid, WeightageCalculatorPOJO weightageCalculation);
 
 	AuditRequest getAuditById(String auditid) throws Exception;
 

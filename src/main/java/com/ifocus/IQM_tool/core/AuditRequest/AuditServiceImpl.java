@@ -105,7 +105,7 @@ public class AuditServiceImpl implements AuditService {
 	}
 
 	@Override
-	public double calculateAuditScore(String auditId, WeightageCalculation weightageCalculation) {
+	public double calculateAuditScore(String auditId, WeightageCalculatorPOJO weightageCalculation) {
 
 		AuditRequest auditRequest = null;
 		double score = 0;

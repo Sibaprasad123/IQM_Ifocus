@@ -87,7 +87,7 @@ public class AuditRequestController {
 	 * @return
 	 */
 	@RequestMapping(method = RequestMethod.POST, value = "/audits/{auditid}/auditscore")
-	public double calculateAuditScore(@RequestBody WeightageCalculation weightageCalculation,
+	public double calculateAuditScore(@RequestBody WeightageCalculatorPOJO weightageCalculation,
 			@PathVariable String auditid) {
 
 		double score = 0;
