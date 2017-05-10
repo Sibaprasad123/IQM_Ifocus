@@ -45,6 +45,7 @@ public class BusinessProcessServiceImpl implements BusinessProcessService {
 		BusinessArea businessArea = businessAreaDAO.findOne(businessAreaId);
 
 		businessProcess.setBusinessArea(businessArea);
+		businessProcess.setBusinessProcessStatus(businessProcess.getBusinessProcessStatus());
 
 		businessProcess = businessProcessDAO.save(businessProcess);
 
