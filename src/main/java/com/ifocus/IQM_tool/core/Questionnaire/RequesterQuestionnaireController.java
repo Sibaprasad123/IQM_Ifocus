@@ -22,6 +22,13 @@ public class RequesterQuestionnaireController {
 	@Autowired
 	private RequesterQuestionnaireService requesterQuestionnaireService;
 
+	/**
+	 * Method to get all the questionnaires related to particular
+	 * businessProcess
+	 * 
+	 * @param processId
+	 * @return
+	 */
 	@RequestMapping("/businessprocesses/{processId}/reqr_ques")
 	private List<RequesterQuestionnaire> getAllQuestionnaires(@PathVariable String processId) {
 
@@ -30,6 +37,17 @@ public class RequesterQuestionnaireController {
 		return questionnaireList;
 
 	}
+
+	/**
+	 * Method to create questionnaire of the requester
+	 * 
+	 * Here we will be creating questionnaire which will be generated based on
+	 * the user's selection of choices and other parameters
+	 * 
+	 * @param reqQuesObject
+	 * @param processId
+	 * @return
+	 */
 
 	@RequestMapping(method = RequestMethod.POST, value = "businessprocess/{processId}/reqr_ques")
 	public RequesterQuestionnaire reqAssesment(@RequestBody ReqQuesCreateObject reqQuesObject,

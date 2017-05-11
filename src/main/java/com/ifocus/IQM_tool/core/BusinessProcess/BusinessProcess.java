@@ -28,23 +28,19 @@ public class BusinessProcess /* extends AbstractDocument */ {
 	@DBRef
 	private BusinessArea businessArea;
 
-	public BusinessProcess() {
-
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
 	}
 
 	/**
-	 * @return the businessArea
+	 * @param id
+	 *            the id to set
 	 */
-	public BusinessArea getBusinessArea() {
-		return businessArea;
-	}
-
-	/**
-	 * @param businessArea
-	 *            the businessArea to set
-	 */
-	public void setBusinessArea(BusinessArea businessArea) {
-		this.businessArea = businessArea;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
@@ -78,18 +74,33 @@ public class BusinessProcess /* extends AbstractDocument */ {
 	}
 
 	/**
-	 * @return the businessProcessStatus
+	 * @return the status
 	 */
-	public BusinessProcessStatus getBusinessProcessStatus() {
+	public BusinessProcessStatus getStatus() {
 		return status;
 	}
 
 	/**
-	 * @param businessProcessStatus
-	 *            the businessProcessStatus to set
+	 * @param status
+	 *            the status to set
 	 */
-	public void setBusinessProcessStatus(BusinessProcessStatus businessProcessStatus) {
-		this.status = businessProcessStatus;
+	public void setStatus(BusinessProcessStatus status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the businessArea
+	 */
+	public BusinessArea getBusinessArea() {
+		return businessArea;
+	}
+
+	/**
+	 * @param businessArea
+	 *            the businessArea to set
+	 */
+	public void setBusinessArea(BusinessArea businessArea) {
+		this.businessArea = businessArea;
 	}
 
 }

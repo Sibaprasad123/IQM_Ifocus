@@ -18,4 +18,6 @@ public interface AdminQuestionnaireService {
 
 	AdminQuestionnaire addAdminQues(String processid, AdminQuesCreateObject quesCreateReqObject);
 
+	List<AdminQuestionnaire> getAllAdminQues(String processid) throws Exception;
+
 }

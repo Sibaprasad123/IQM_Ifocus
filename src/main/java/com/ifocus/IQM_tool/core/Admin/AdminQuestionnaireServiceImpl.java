@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.ifocus.IQM_tool.core.BusinessProcess.BusinessProcess;
 import com.ifocus.IQM_tool.core.BusinessProcess.BusinessProcessDAO;
@@ -17,8 +18,6 @@ import com.ifocus.IQM_tool.core.Questionnaire.AdminQuesCreateObject;
 import com.ifocus.IQM_tool.core.User.Choices;
 import com.ifocus.IQM_tool.core.Weightage.Weightage;
 import com.ifocus.IQM_tool.core.Weightage.WeightageDAO;
-
-
 
 /**
  * @author IGS-Admin
@@ -83,6 +82,25 @@ public class AdminQuestionnaireServiceImpl implements AdminQuestionnaireService 
 		adminQuestionnaire = adminQuesDAO.save(adminQuestionnaire);
 
 		return adminQuestionnaire;
+	}
+
+	@Override
+	public List<AdminQuestionnaire> getAllAdminQues(String processid) throws Exception {
+
+		BusinessProcess businessProcess = null;
+		List<AdminQuestionnaire> adminQuesList = new ArrayList<>();
+		if (!StringUtils.isEmpty(processid)) {
+			businessProcess = businessProcessDAO.findOne(processid);
+			if (businessProcess != null) {
+				adminQuesList = adminQuesDAO.findByBusinessProcess(businessProcess);
+			} else {
+				throw new Exception("BusinessProcess doesn't exist");
+			}
+		} else {
+			throw new Exception("Processid cannot be empty");
+		}
+
+		return adminQuesList;
 	}
 
 }

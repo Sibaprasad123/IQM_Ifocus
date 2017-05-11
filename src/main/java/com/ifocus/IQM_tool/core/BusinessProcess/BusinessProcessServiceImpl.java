@@ -46,7 +46,7 @@ public class BusinessProcessServiceImpl implements BusinessProcessService {
 
 		businessProcess.setBusinessArea(businessArea);
 
-		businessProcess.setBusinessProcessStatus(BusinessProcessStatus.ACTIVE);
+		businessProcess.setStatus(BusinessProcessStatus.ACTIVE);
 
 		businessProcess = businessProcessDAO.save(businessProcess);
 
@@ -62,7 +62,7 @@ public class BusinessProcessServiceImpl implements BusinessProcessService {
 
 		if (businessProcess != null) {
 
-			businessProcess.setBusinessProcessStatus(BusinessProcessStatus.valueOf(status));
+			businessProcess.setStatus(BusinessProcessStatus.valueOf(status));
 
 			businessProcessDAO.save(businessProcess);
 		} else {
