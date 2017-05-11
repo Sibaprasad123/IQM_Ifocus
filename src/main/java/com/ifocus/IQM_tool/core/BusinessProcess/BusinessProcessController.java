@@ -43,7 +43,7 @@ public class BusinessProcessController {
 		return businessProcess;
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/businessprocess/{processid}/status")
+	@RequestMapping(method = RequestMethod.PUT, value = "/businessprocesses/{processid}/status")
 	public BusinessProcess updateProcessStatus(@RequestBody String status, @PathVariable String processid)
 			throws Exception {
 		BusinessProcess businessProcess = null;
@@ -51,7 +51,7 @@ public class BusinessProcessController {
 		return businessProcess;
 	}
 
-	@RequestMapping(method = RequestMethod.DELETE, value = "/businessprocess/{processid}")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/businessprocesses/{processid}")
 	public String deleteProcessStatus(@PathVariable String processid) throws Exception {
 
 		String message = null;

@@ -49,7 +49,7 @@ public class RequesterQuestionnaireController {
 	 * @return
 	 */
 
-	@RequestMapping(method = RequestMethod.POST, value = "businessprocess/{processId}/reqr_ques")
+	@RequestMapping(method = RequestMethod.POST, value = "businessprocesses/{processId}/reqr_ques")
 	public RequesterQuestionnaire reqAssesment(@RequestBody ReqQuesCreateObject reqQuesObject,
 			@PathVariable String processId) {
 

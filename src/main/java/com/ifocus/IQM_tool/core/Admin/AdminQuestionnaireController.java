@@ -26,8 +26,9 @@ public class AdminQuestionnaireController {
 	private AdminQuestionnaireService adminQuestionnaireService;
 
 	/**
-	 * Method to get all the available questionnaires Basically the admin
-	 * questionnaires
+	 * Method to get all the available questionnaires
+	 * 
+	 * Basically the admin questionnaires
 	 * 
 	 * @return
 	 */
@@ -42,15 +43,16 @@ public class AdminQuestionnaireController {
 	}
 
 	/**
-	 * Method to create new questionnaire Here, basically new questionnaire
-	 * would be framed with all the available choices, stages for particular
-	 * questionnaire
+	 * Method to create new questionnaire
+	 * 
+	 * Here, basically new questionnaire would be framed with all the available
+	 * choices, stages for particular questionnaire
 	 * 
 	 * @param quesCreateReqObject
 	 * @param processid
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.POST, value = "businessprocess/{processid}/admin_ques")
+	@RequestMapping(method = RequestMethod.POST, value = "businessprocesses/{processid}/admin_ques")
 	public AdminQuestionnaire createAdminQues(@RequestBody AdminQuesCreateObject quesCreateReqObject,
 			@PathVariable String processid) {
 
@@ -73,7 +75,7 @@ public class AdminQuestionnaireController {
 	 * @throws Exception
 	 */
 
-	@RequestMapping(method = RequestMethod.GET, value = "businessprocess/{processid}/admin_ques")
+	@RequestMapping(method = RequestMethod.GET, value = "businessprocesses/{processid}/admin_ques")
 	public List<AdminQuestionnaire> getAdminQuestionnaires(@PathVariable String processid) throws Exception {
 
 		List<AdminQuestionnaire> adminQuestionnaireList = adminQuestionnaireService.getAllAdminQues(processid);

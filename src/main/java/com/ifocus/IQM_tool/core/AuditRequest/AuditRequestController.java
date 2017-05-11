@@ -61,7 +61,7 @@ public class AuditRequestController {
 		return audit;
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/businessprocesses/{processid}/audit")
+	@RequestMapping(method = RequestMethod.POST, value = "/businessprocesses/{processid}/audits")
 	public AuditRequest createAuditRequest(@RequestBody AuditReqCreateObject auditReqCreateObject,
 			@PathVariable String processid) throws Exception {
 
