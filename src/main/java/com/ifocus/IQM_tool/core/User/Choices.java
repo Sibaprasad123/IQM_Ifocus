@@ -8,6 +8,5 @@ package com.ifocus.IQM_tool.core.User;
  *
  */
 public enum Choices {
-
 	YES, NO, PARTIAL, NOTAPPLICABLE
 }
